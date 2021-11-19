@@ -1,18 +1,10 @@
-let appId = 'abc';
+// the "!" at the end of the query selection assures typescript that there will be a result. (Avoid compilation errors)
 const button = document.querySelector('button')!;
 
-function add(n1: number, n2: number) {
-  if (n1 + n2 > 0) {
-    return n1 + n2;
-  }
-  return;
+function clickHandler(message: string) {
+    console.log('Clicked! ' + message);
 }
 
-function clickHandler(message: string) {
-  // let userName = 'Max';
-  console.log('Clicked! ' + message);
-}
-// a comment
 if (button) {
-  button.addEventListener('click', clickHandler.bind(null, "You're welcome!"));
+    button.addEventListener('click', clickHandler.bind(null, 'Hello there!'))
 }

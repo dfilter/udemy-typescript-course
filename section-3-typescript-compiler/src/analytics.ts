@@ -1,8 +1,8 @@
-let logged;
+let myVar;
 
 function sendAnalytics(data: string) {
-  console.log(data);
-  logged = true;
+    console.log(data);
+    myVar = false;
 }
 
 sendAnalytics('The data');
