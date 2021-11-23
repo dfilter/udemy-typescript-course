@@ -49,10 +49,10 @@ type UnknownEmployee = Employee | Admin;
 const fetchedUserData = {
     id: 'u1',
     name: 'John',
-    // job: {
-    //     title: 'CEO',
-    //     description: 'My own company'
-    // }
+    job: {
+        title: 'CEO',
+        description: 'My own company'
+    }
 }
 console.log(fetchedUserData?.job?.title);
 
