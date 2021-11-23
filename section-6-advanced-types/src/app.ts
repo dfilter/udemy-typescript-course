@@ -24,8 +24,14 @@ type Numeric = number | boolean;
 // the only types that intersect are "number" therefor the only applicable type to Universal will be number
 type Universal = Combinable & Numeric;
 
-// type guarding:
 
+// Type guarding:
+// Function overloads:
+
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: number, b: string): string;
+function add(a: string, b: number): string;
 function add(a: Combinable, b: Combinable) {
     // this is an example of a type guard:
     if (typeof a === 'string' || typeof b === 'string') {
@@ -33,6 +39,10 @@ function add(a: Combinable, b: Combinable) {
     }
     return a + b;
 }
+
+
+
+const result = add('John', 'Doe') as string;
 
 type UnknownEmployee = Employee | Admin;
 
@@ -81,6 +91,7 @@ function useVehicle(vehicle: Vehicle) {
 useVehicle(v1);
 useVehicle(v2);
 
+
 // Discriminated Unions
 // in order to discriminate between the interfaces we add a common property that describes it.
 interface Bird {
@@ -118,7 +129,8 @@ if (userInputElement) {
     (userInputElement as HTMLInputElement).value = 'Hi there!';
 }
 
-// index types
+
+// Index properties:
 
 interface ErrorContainer {
     [prop: string]: string  // dynamic property name and count
