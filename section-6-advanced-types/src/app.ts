@@ -44,6 +44,8 @@ const result = add('John', 'Doe') as string;
 
 type UnknownEmployee = Employee | Admin;
 
+// Optional chaining:
+
 const fetchedUserData = {
     id: 'u1',
     name: 'John',
@@ -53,6 +55,13 @@ const fetchedUserData = {
     // }
 }
 console.log(fetchedUserData?.job?.title);
+
+// Nullish Coalescing:
+
+const userInput = null;
+// null coalesce if userInput is null then assign "DEFAULT"
+const storedData = userInput ?? 'DEFAULT';
+console.log(storedData);
 
 function printEmployeeInformation(emp: UnknownEmployee) {
     console.log('Name: ', emp.name);
