@@ -40,11 +40,19 @@ function add(a: Combinable, b: Combinable) {
     return a + b;
 }
 
-
-
 const result = add('John', 'Doe') as string;
 
 type UnknownEmployee = Employee | Admin;
+
+const fetchedUserData = {
+    id: 'u1',
+    name: 'John',
+    // job: {
+    //     title: 'CEO',
+    //     description: 'My own company'
+    // }
+}
+console.log(fetchedUserData?.job?.title);
 
 function printEmployeeInformation(emp: UnknownEmployee) {
     console.log('Name: ', emp.name);
