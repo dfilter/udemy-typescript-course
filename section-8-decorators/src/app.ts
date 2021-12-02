@@ -32,6 +32,7 @@ function WithTemplate(template: string, hookId: string) {
   };
 }
 
+// when using decorators on a class not that the decorator will execute when the class is defined not instantiated
 // decorators only execute when the class is defined not each time an instance is created.
 // decorators execute bottom up excluding the code that is not inside the decorator factory which execute top down.
 // implementing the decorator
