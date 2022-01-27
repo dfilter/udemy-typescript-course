@@ -3,7 +3,7 @@
 // since classes are syntactic sugar for constructor functions it executes when the constructor executes
 // decorators are also capable of returning data as well
 function Logger(logString: string) {
-  console.log('LOGGER FACTORY'); // this will execute before WithTemplate decorator because it is executed first
+  console.log('LOGGER FACTORY'); // this will execute before WithTemplate decorator because it is not within the returned function below
   return function(constructor: Function) {
     console.log(logString);
     console.log(constructor);
@@ -32,7 +32,7 @@ function WithTemplate(template: string, hookId: string) {
   };
 }
 
-// when using decorators on a class not that the decorator will execute when the class is defined not instantiated
+// when using decorators on a class, note that the decorator will execute when the class is defined not instantiated
 // decorators only execute when the class is defined not each time an instance is created.
 // decorators execute bottom up excluding the code that is not inside the decorator factory which execute top down.
 // implementing the decorator
